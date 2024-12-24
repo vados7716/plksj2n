@@ -1,0 +1,5 @@
+/* latin-ext */
+@font-face {
+  font-family: Tektur;
+  src: url('../images/intro.otf') format('opentype');
+}

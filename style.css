@@ -1,0 +1,110 @@
+body {
+  background-image: url(./bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#responseText {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Intro', sans-serif; 
+}
+
+#luckyJetIcon {
+  max-width: 100%;
+  height: auto;
+  animation: wiggle 3s linear infinite;
+  margin-bottom: 20px;
+  font-size: 5vw; /* Размер текста в процентах от ширины экрана */
+}
+
+#luckyJetIcon.flying,
+#luckyJetIcon.ending {
+  height: 400px;
+  width: 300px;
+}
+
+#endingText {
+  font-size: 7vw; /* Размер текста в процентах от ширины экрана */
+  margin-top: 10px; 
+  display: none;  
+  color: white;
+  animation: blink 0.2s linear infinite; 
+}
+
+
+#waitingText {
+  font-size: 7vw; /* Размер текста в процентах от ширины экрана */
+  margin-top: 10px; 
+  display: none;  
+  color: white;
+  animation: none;
+}
+
+#endingText.show,
+#waitingText.show {
+  display: block; 
+}
+
+#pluggText {
+  font-size: 7vw; 
+  margin-top: 160px; 
+  display: block;  
+  animation: glow 3s linear infinite;
+}
+
+@keyframes glow {
+  0% { color: #ae00ff; } 
+  50% { color: rgb(247, 0, 255); }
+  100% { color: #ae00ff; } 
+}
+
+@keyframes wiggle {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(10px, -10px); }
+  50% { transform: translate(-8px, 10px); }
+  75% { transform: translate(10px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: url('./images/intro.otf'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* Media Queries для адаптации */
+
+@media (max-width: 768px) { /* Для мобильных устройств */
+  #luckyJetIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  #endingText,
+  #waitingText,
+  #pluggText {
+    font-size: 7vw; 
+  }
+
+  #pluggText {
+    margin-top: 30px; 
+  }
+}
